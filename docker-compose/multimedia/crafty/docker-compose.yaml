@@ -1,0 +1,21 @@
+name: homelab
+services:
+  crafty:
+    image: registry.gitlab.com/crafty-controller/crafty-4:latest
+    restart: always
+    environment:
+        - TZ=${TZ}
+    ports:
+        - "8443:8443" # HTTPS
+        - "8123:8123" # DYNMAP
+        - "19132:19132/udp" # BEDROCK
+        - "25500-25520:25500-25520" # MC SERV PORT RANGE
+    volumes:
+        - type: volume
+          source: backups-smb
+          volume:
+            subpath: others/minecraft/backups
+          target: /crafty/backups
+        - ${MULTIMEDIA_VOL}/crafty/logs:/crafty/logs
+        - ${MULTIMEDIA_VOL}/crafty/servers:/crafty/servers
+        - ${MULTIMEDIA_VOL}/crafty/config:/crafty/app/config

@@ -1,0 +1,12 @@
+name: homelab
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    user: 1000:1000
+    ports:
+      - 8096:8096 
+    volumes:
+      - ${VOLUMES_DIRECTORY}/multimedia/jellyfin/config:/config
+      - ${VOLUMES_DIRECTORY}/multimedia/jellyfin/cache:/cache
+      - media-smb:/media
+    restart: always

@@ -1,0 +1,15 @@
+name: homelab
+services:
+  maintainerr:
+    image: ghcr.io/jorenn92/maintainerr:latest
+    user: 1000:1000
+    volumes:
+      - ${MULTIMEDIA_VOL}/maintainerr:/opt/data
+    environment:
+      - TZ=${TZ}
+      - PUID=1000
+      - PGID=1000
+#      - DEBUG=true # uncomment to enable debug logs
+    ports:
+      - 6246:6246
+    restart: always

@@ -1,0 +1,11 @@
+name: homelab
+services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    restart: always
+    environment:
+      DOMAIN: "https://vaultwarden.sarsha.co.il"
+    volumes:
+      - ${TOOLS_VOL}/vaultwarden/:/data/
+    ports:
+      - 55:80

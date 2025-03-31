@@ -1,0 +1,9 @@
+name: homelab
+services:
+  myspeed:
+    image: germannewsmaker/myspeed
+    ports:
+      - 5216:5216
+    volumes:
+      - ${TOOLS_VOL}/myspeed:/myspeed/data
+    restart: always

@@ -1,0 +1,13 @@
+name: homelab
+services:
+  kometa:
+    image: kometateam/kometa
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Jerusalem
+      - KOMETA_TIMES=06:00,08:00,10:00,12:00,14:00,16:00,18:00,20:00,22:00,00:00
+      - KOMETA_CONFIG=./config/config.yml
+    volumes:
+      - ${VOLUMES_DIRECTORY}/multimedia/kometa/config:/config
+    restart: always

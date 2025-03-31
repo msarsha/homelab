@@ -1,0 +1,29 @@
+#include:
+#  - ./docker-compose/home-automation/docker-compose.yaml
+#  - ./docker-compose/multimedia/docker-compose.yaml
+#  - ./docker-compose/infra/docker-compose.yaml
+#  - ./docker-compose/storage/docker-compose.yaml
+#  - ./docker-compose/tools/docker-compose.yaml
+
+name: homelab
+volumes:
+  media-smb:
+    driver: local
+    driver_opts:
+      type: cifs
+      o: "username=${SMB_MEDIA_USER},password=${SMB_MEDIA_PASS},vers=3.0,uid=1000,gid=1000,file_mode=0664,dir_mode=0775"
+      device: "//${NAS_ADDRESS}/media"
+
+  backups-smb:
+    driver: local
+    driver_opts:
+      type: cifs
+      o: "username=${SMB_BACKUPS_USER},password=${SMB_BACKUPS_PASS},vers=3.0,uid=1000,gid=1000,file_mode=0664,dir_mode=0775"
+      device: "//${NAS_ADDRESS}/backups"
+
+  immich-smb:
+    driver: local
+    driver_opts:
+      type: cifs
+      o: "username=${SMB_IMMICH_USER},password=${SMB_IMMICH_PASS},vers=3.0,uid=1000,gid=1000,file_mode=0664,dir_mode=0775"
+      device: "//${NAS_ADDRESS}/immich"

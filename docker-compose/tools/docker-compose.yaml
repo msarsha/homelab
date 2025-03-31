@@ -1,0 +1,4 @@
+name: homelab
+include:
+  - ./myspeed/docker-compose.yaml
+  - ./vaultwarden/docker-compose.yaml
