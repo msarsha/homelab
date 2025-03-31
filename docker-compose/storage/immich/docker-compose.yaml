@@ -13,8 +13,6 @@ services:
       - redis
       - database
     restart: always
-    healthcheck:
-      disable: false
 
   immich-machine-learning:
     # For hardware acceleration, add one of -[armnn, cuda, openvino] to the image tag.
@@ -28,8 +26,6 @@ services:
     env_file:
       - .env
     restart: always
-    healthcheck:
-      disable: false
 
   redis:
     image: docker.io/redis:6.2-alpine@sha256:148bb5411c184abd288d9aaed139c98123eeb8824c5d3fce03cf721db58066d8
