@@ -27,3 +27,24 @@ volumes:
       type: cifs
       o: "username=${SMB_IMMICH_USER},password=${SMB_IMMICH_PASS},vers=3.0,uid=1000,gid=1000,file_mode=0664,dir_mode=0775"
       device: "//${NAS_ADDRESS}/immich"
+
+  misc-smb:
+    driver: local
+    driver_opts:
+      type: cifs
+      o: "username=${SMB_MISC_USER},password=${SMB_MISC_PASS},vers=3.0,uid=1000,gid=1000,file_mode=0664,dir_mode=0775"
+      device: "//${NAS_ADDRESS}/misc"
+
+  roms-smb:
+    driver: local
+    driver_opts:
+      type: cifs
+      o: "username=${SMB_ROMS_USER},password=${SMB_ROMS_PASS},vers=3.0,uid=1000,gid=1000,file_mode=0664,dir_mode=0775"
+      device: "//${NAS_ADDRESS}/roms"
+
+  autobrr-smb:
+    driver: local
+    driver_opts:
+      type: cifs
+      o: "username=${SMB_MEDIA_USER},password=${SMB_MEDIA_PASS},vers=3.0,uid=1000,gid=1000,file_mode=0664,dir_mode=0775"
+      device: "//${NAS_ADDRESS}/autobrr"
