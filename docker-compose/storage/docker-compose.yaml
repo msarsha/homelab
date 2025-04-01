@@ -2,3 +2,4 @@ name: homelab
 include:
   - ./immich/docker-compose.yaml
   - ./syncthing/docker-compose.yaml
+  - ./filebrowser/docker-compose.yaml

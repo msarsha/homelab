@@ -6,7 +6,7 @@ services:
       - immich-smb:/usr/src/app/upload
       - /etc/localtime:/etc/localtime:ro
     ports:
-      - 2283:2283
+      - 1708:2283
     env_file:
       - .env
     depends_on:

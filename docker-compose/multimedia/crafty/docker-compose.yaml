@@ -6,7 +6,7 @@ services:
     environment:
         - TZ=${TZ}
     ports:
-        - "8443:8443" # HTTPS
+        - "1706:8443" # HTTPS
         - "8123:8123" # DYNMAP
         - "19132:19132/udp" # BEDROCK
         - "25500-25520:25500-25520" # MC SERV PORT RANGE

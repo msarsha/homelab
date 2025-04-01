@@ -8,4 +8,4 @@ services:
     volumes:
       - ${TOOLS_VOL}/vaultwarden/:/data/
     ports:
-      - 55:80
+      - 1711:80

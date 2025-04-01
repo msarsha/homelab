@@ -11,5 +11,5 @@ services:
       - PGID=1000
 #      - DEBUG=true # uncomment to enable debug logs
     ports:
-      - 6246:6246
+      - 1707:6246
     restart: always
