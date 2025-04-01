@@ -1,0 +1,18 @@
+name: homelab
+services:
+  filebrowser:
+    image: filebrowser/filebrowser:s6
+    volumes:
+      - backups-smb:/mounts/backup
+      - immich-smb:/mounts/immich
+      - roms-smb:/mounts/roms
+      - misc-smb:/mounts/misc
+      - media-smb:/mounts/media
+      - ${STORAGE_VOL}/filebrowser/filebrowser.db:/database/filebrowser.db
+      - ${STORAGE_VOL}/filebrowser/settings.json:/config/settings.json
+    environment:
+      - PUID=1000
+      - PGID=1000
+    ports:
+      - 1705:80
+    restart: always
