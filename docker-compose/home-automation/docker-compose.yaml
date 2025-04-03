@@ -1,3 +1,4 @@
 name: homelab
 include:
   - mosquitto/docker-compose.yaml
+  - zigbee2mqtt/docker-compose.yaml
