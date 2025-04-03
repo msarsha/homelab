@@ -9,4 +9,4 @@ services:
       - ${VOLUMES_DIRECTORY}/multimedia/jellyfin/config:/config
       - ${VOLUMES_DIRECTORY}/multimedia/jellyfin/cache:/cache
       - media-smb:/media
-    restart: always
+    restart: unless-stopped

@@ -10,4 +10,4 @@ services:
       - KOMETA_CONFIG=./config/config.yml
     volumes:
       - ${VOLUMES_DIRECTORY}/multimedia/kometa/config:/config
-    restart: always
+    restart: unless-stopped

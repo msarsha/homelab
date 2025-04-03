@@ -2,7 +2,7 @@ name: homelab
 services:
   crafty:
     image: registry.gitlab.com/crafty-controller/crafty-4:latest
-    restart: always
+    restart: unless-stopped
     environment:
         - TZ=${TZ}
     ports:

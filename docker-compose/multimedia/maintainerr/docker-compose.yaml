@@ -12,4 +12,4 @@ services:
 #      - DEBUG=true # uncomment to enable debug logs
     ports:
       - 1707:6246
-    restart: always
+    restart: unless-stopped

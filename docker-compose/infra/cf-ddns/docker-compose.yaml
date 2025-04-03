@@ -10,4 +10,4 @@ services:
       - PGID=1000
     volumes:
       - ${INFRA_VOL}/cf-ddns/config.json:/config.json
-    restart: always
+    restart: unless-stopped

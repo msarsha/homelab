@@ -12,7 +12,7 @@ services:
     depends_on:
       - redis
       - database
-    restart: always
+    restart: unless-stopped
 
   immich-machine-learning:
     # For hardware acceleration, add one of -[armnn, cuda, openvino] to the image tag.
@@ -25,13 +25,13 @@ services:
       - model-cache:/cache
     env_file:
       - .env
-    restart: always
+    restart: unless-stopped
 
   redis:
     image: docker.io/redis:6.2-alpine@sha256:148bb5411c184abd288d9aaed139c98123eeb8824c5d3fce03cf721db58066d8
     healthcheck:
       test: redis-cli ping || exit 1
-    restart: always
+    restart: unless-stopped
 
   database:
     image: docker.io/tensorchord/pgvecto-rs:pg14-v0.2.0@sha256:739cdd626151ff1f796dc95a6591b55a714f341c737e27f045019ceabf8e8c52
@@ -52,11 +52,11 @@ services:
       start_period: 5m
     command: >-
       postgres -c shared_preload_libraries=vectors.so -c 'search_path="$$user", public, vectors' -c logging_collector=on -c max_wal_size=2GB -c shared_buffers=512MB -c wal_compression=on
-    restart: always
+    restart: unless-stopped
 
   immich-backup:
     image: prodrigestivill/postgres-backup-local:14
-    restart: always
+    restart: unless-stopped
     environment:
       POSTGRES_HOST: database
       POSTGRES_CLUSTER: 'TRUE'

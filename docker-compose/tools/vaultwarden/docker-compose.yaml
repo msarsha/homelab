@@ -2,7 +2,7 @@ name: homelab
 services:
   vaultwarden:
     image: vaultwarden/server:latest
-    restart: always
+    restart: unless-stopped
     environment:
       DOMAIN: "https://vaultwarden.sarsha.co.il"
     volumes:
