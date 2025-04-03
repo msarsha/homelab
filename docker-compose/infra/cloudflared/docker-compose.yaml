@@ -1,0 +1,5 @@
+name: homelab
+services:
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    command: tunnel --no-autoupdate run --token ${CF_TOKEN}
