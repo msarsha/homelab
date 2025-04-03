@@ -1,0 +1,14 @@
+name: homelab
+services:
+  esphome:
+    image: ghcr.io/esphome/esphome
+    volumes:
+      - ${HOME_AUTO_VOL}/esphome/config:/config
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+    privileged: true
+    ports:
+      - 1713:6052
+    environment:
+      - USERNAME=${ESPHOME_USER}
+      - PASSWORD=${ESPHOME_PASS}
