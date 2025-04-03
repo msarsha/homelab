@@ -1,1 +1,4 @@
 name: homelab
+
+include:
+  - mosquitto/docker-compose.yaml

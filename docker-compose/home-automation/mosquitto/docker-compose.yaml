@@ -1,0 +1,14 @@
+name: homelab
+services:
+  mosquitto:
+    image: eclipse-mosquitto
+    user: 1000:1000
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    ports:
+      - 1883:1883
+    volumes:
+      - ${HOME_AUTO_VOL}/mosquitto/config:/mosquitto/config
+      - ${HOME_AUTO_VOL}/mosquitto/data:/mosquitto/data
+      - ${HOME_AUTO_VOL}/mosquitto/log:/mosquitto/log
