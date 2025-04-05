@@ -13,3 +13,17 @@ services:
     ports:
       - 1715:7878
     restart: unless-stopped
+
+  radarr-kids:
+    image: lscr.io/linuxserver/radarr:latest
+    user: 1000:1000
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+    volumes:
+      - ${MULTIMEDIA_VOL}/radarr-kids/config:/config
+      - media-smb:/media #optional
+    ports:
+      - 1722:7878
+    restart: unless-stopped

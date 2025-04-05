@@ -13,3 +13,17 @@ services:
     ports:
       - 1716:8989
     restart: unless-stopped
+
+  sonarr-kids:
+    image: lscr.io/linuxserver/sonarr:latest
+    user: 1000:1000
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+    volumes:
+      - ${MULTIMEDIA_VOL}/sonarr-kids/config:/config
+      - media-smb:/media #optional
+    ports:
+      - 1724:8989
+    restart: unless-stopped
