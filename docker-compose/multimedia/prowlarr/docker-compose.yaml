@@ -1,0 +1,14 @@
+name: homelab
+services:
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    user: 1000:1000
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+    volumes:
+      - ${MULTIMEDIA_VOL}/prowlarr/config:/config
+    ports:
+      - 1717:9696
+    restart: unless-stopped
