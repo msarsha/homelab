@@ -1,4 +1,4 @@
 name: homelab
 include:
-  - cf-ddns/docker-compose.yaml
-  - cloudflared/docker-compose.yaml
+  - ./docker-compose/infra/cf-ddns/docker-compose.yaml
+  - ./docker-compose/infra/cloudflared/docker-compose.yaml

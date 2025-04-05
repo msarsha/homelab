@@ -1,6 +1,6 @@
 name: homelab
 include:
-  - ./immich/docker-compose.yaml
-  - ./syncthing/docker-compose.yaml
-  - ./filebrowser/docker-compose.yaml
-  - ./qbittorent/docker-compose.yaml
+  - ./docker-compose/storage/immich/docker-compose.yaml
+  - ./docker-compose/storage/syncthing/docker-compose.yaml
+  - ./docker-compose/storage/filebrowser/docker-compose.yaml
+  - ./docker-compose/storage/qbittorent/docker-compose.yaml

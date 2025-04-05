@@ -1,5 +1,5 @@
 name: homelab
 include:
-  - mosquitto/docker-compose.yaml
-  - zigbee2mqtt/docker-compose.yaml
-  - esphome/docker-compose.yaml
+  - ./docker-compose/home-automation/mosquitto/docker-compose.yaml
+  - ./docker-compose/home-automation/zigbee2mqtt/docker-compose.yaml
+  - ./docker-compose/home-automation/esphome/docker-compose.yaml

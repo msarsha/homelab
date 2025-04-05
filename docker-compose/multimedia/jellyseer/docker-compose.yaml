@@ -12,3 +12,16 @@ services:
     volumes:
       - ${MULTIMEDIA_VOL}/jellyseer/config:/app/config
     restart: unless-stopped
+
+#  jellyseerr-tmp:
+#    image: ghcr.io/fallenbagel/jellyseerr:latest
+#    user: 1000:1000
+#    environment:
+#      - LOG_LEVEL=debug
+#      - TZ=${TZ}
+#      - PORT=5055 #optional
+#    ports:
+#      - 1733:5055
+#    volumes:
+#      - ${MULTIMEDIA_VOL}/jellyseer-tmp/config:/app/config
+#    restart: unless-stopped

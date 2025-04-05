@@ -1,10 +1,10 @@
 name: homelab
 include:
-  - ./jellyfin/docker-compose.yaml
-  - ./crafty/docker-compose.yaml
-  - ./maintainerr/docker-compose.yaml
-  - ./bazarr/docker-compose.yaml
-  - ./jellyseer/docker-compose.yaml
-  - ./prowlarr/docker-compose.yaml
-  - ./radarr/docker-compose.yaml
-  - ./sonarr/docker-compose.yaml
+  - ./docker-compose/multimedia/jellyfin/docker-compose.yaml
+  - ./docker-compose/multimedia/crafty/docker-compose.yaml
+  - ./docker-compose/multimedia/maintainerr/docker-compose.yaml
+  - ./docker-compose/multimedia/bazarr/docker-compose.yaml
+  - ./docker-compose/multimedia/jellyseer/docker-compose.yaml
+  - ./docker-compose/multimedia/prowlarr/docker-compose.yaml
+  - ./docker-compose/multimedia/radarr/docker-compose.yaml
+  - ./docker-compose/multimedia/sonarr/docker-compose.yaml
