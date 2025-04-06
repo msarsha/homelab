@@ -4,6 +4,8 @@ services:
     image: ghcr.io/koenkk/zigbee2mqtt
     user: 1000:1000
     restart: unless-stopped
+    group_add:
+      - dialout
     volumes:
       - ${HOME_AUTO_VOL}/zigbee2mqtt/data:/app/data
       - /run/udev:/run/udev:ro
