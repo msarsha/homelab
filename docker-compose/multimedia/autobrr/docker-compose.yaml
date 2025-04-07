@@ -1,0 +1,12 @@
+name: homelab
+services:
+  autobrr:
+    image: ghcr.io/autobrr/autobrr:latest
+    restart: unless-stopped
+    user: 1000:1000
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - ${MULTIMEDIA_VOL}/autobrr/config:/config
+    ports:
+      - 1727:7474
