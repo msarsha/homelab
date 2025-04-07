@@ -1,0 +1,14 @@
+name: homelab
+services:
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    user: 1000:1000
+    ports:
+      - 1725:3000
+    volumes:
+      - ${TOOLS_VOL}/homepage/config:/app/config # Make sure your local config directory exists
+      - /var/run/docker.sock:/var/run/docker.sock # (optional) For docker integrations, see alternative methods
+    environment:
+      HOMEPAGE_ALLOWED_HOSTS: dashboard.sarsha.co.il,192.168.0.24:1725 # required, may need port. See gethomepage.dev/installation/#homepage_allowed_hosts
+      PUID: 1000
+      PGID: 1000
