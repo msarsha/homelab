@@ -16,3 +16,21 @@ services:
       - 6881:6881
       - 6881:6881/udp
     restart: unless-stopped
+
+  qbittorrent-autobrr:
+    image: lscr.io/linuxserver/qbittorrent:latest
+    user: 1000:1000
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+      - WEBUI_PORT=1726
+      - TORRENTING_PORT=6882
+    volumes:
+      - ${STORAGE_VOL}/qbittorrent-autobrr/config:/config
+      - autobrr-smb:/media #optional
+    ports:
+      - 1726:1726
+      - 6882:6882
+      - 6882:6882/udp
+    restart: unless-stopped

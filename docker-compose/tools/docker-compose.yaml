@@ -2,3 +2,4 @@ name: homelab
 include:
   - ./docker-compose/tools/myspeed/docker-compose.yaml
   - ./docker-compose/tools/vaultwarden/docker-compose.yaml
+  - ./docker-compose/tools/homepage/docker-compose.yaml
